@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace _20160513_autenticacao
+namespace ClinicaVeterinaria
 {
     public class FilterConfig
     {

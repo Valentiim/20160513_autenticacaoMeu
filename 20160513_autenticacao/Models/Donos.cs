@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace _20160513_autenticacao.Models
+namespace ClinicaVeterinaria.Models
 {
     public class Donos {
         public Donos()

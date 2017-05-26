@@ -1,4 +1,4 @@
-namespace _20160513_autenticacao.Migrations
+namespace ClinicaVeterinaria.Migrations
 {
     using Models;
     using System;
@@ -7,14 +7,14 @@ namespace _20160513_autenticacao.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<_20160513_autenticacao.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ClinicaVeterinaria.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;//permite a actualização automática da BD
         }
 
-        protected override void Seed(_20160513_autenticacao.Models.ApplicationDbContext context)
+        protected override void Seed(ClinicaVeterinaria.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

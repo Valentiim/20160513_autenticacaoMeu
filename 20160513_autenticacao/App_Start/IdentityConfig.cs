@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using _20160513_autenticacao.Models;
+using ClinicaVeterinaria.Models;
 
-namespace _20160513_autenticacao
+namespace ClinicaVeterinaria
 {
     public class EmailService : IIdentityMessageService
     {

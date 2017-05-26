@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(_20160513_autenticacao.Startup))]
-namespace _20160513_autenticacao
+[assembly: OwinStartupAttribute(typeof(ClinicaVeterinaria.Startup))]
+namespace ClinicaVeterinaria
 {
     public partial class Startup
     {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<_20160513_autenticacao.Models.Donos>
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Donos>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,11 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Novo Dono", "Create")
+    }
+
 </p>
 <table class="table">
     <tr>
@@ -20,20 +24,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NIF)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DonoID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DonoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DonoID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIF)
+            </td>
+            <td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.DonoID }) |
+                        @Html.ActionLink("Detalhes", "Detalhes", new { id = item.DonoID }) |
+                        @Html.ActionLink("Apagar", "Delete", new { id = item.DonoID })
+                    </div>
+                }
+                
+            </td>
+        </tr>
+                }
 
 </table>

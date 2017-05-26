@@ -6,22 +6,26 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using _20160513_autenticacao.Models;
+using ClinicaVeterinaria.Models;
 
-namespace _20160513_autenticacao.Controllers
+namespace ClinicaVeterinaria.Controllers
 {
+    [Authorize] //força a que só os utilizadores AUTENTICADOS consigam aceder aos metodos desta classe, aplica a todos os métodos
     public class DonosController : Controller
     {
+    
+        //onde tem todos os objetos referenciados a nossa bases de dados 
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Donos
+        [AllowAnonymous] //permite o acesso de UTILIZADORES ANÓNIMOS aos conteúdos deste método
         public ActionResult Index()
         {
             return View(db.Donos.ToList());
         }
 
-        // GET: Donos/Details/5
-        public ActionResult Details(int? id)
+        // GET: Donos/Detalhes/5
+        public ActionResult Detalhes(int? id)
         {
             if (id == null)
             {
@@ -43,7 +47,7 @@ namespace _20160513_autenticacao.Controllers
 
         // POST: Donos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more Detalhes see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DonoID,Nome,NIF")] Donos donos)
@@ -75,7 +79,7 @@ namespace _20160513_autenticacao.Controllers
 
         // POST: Donos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more Detalhes see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "DonoID,Nome,NIF")] Donos donos)

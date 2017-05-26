@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace _20160513_autenticacao
+namespace ClinicaVeterinaria
 {
     public class RouteConfig
     {

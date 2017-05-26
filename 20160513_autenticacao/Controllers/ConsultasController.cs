@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using _20160513_autenticacao.Models;
+using ClinicaVeterinaria.Models;
 
-namespace _20160513_autenticacao.Controllers
+namespace ClinicaVeterinaria.Controllers
 {   //Coloca Logo a pass
     //pertence ou a outro
     //[Authorize(Roles = "Veterinarios, Funcionarios")]
@@ -26,8 +26,8 @@ namespace _20160513_autenticacao.Controllers
             return View(consultas.ToList());
         }
 
-        // GET: Consultas/Details/5
-        public ActionResult Details(int? id)
+        // GET: Consultas/Detalhes/5
+        public ActionResult Detalhes(int? id)
         {
             if (id == null)
             {
@@ -52,7 +52,7 @@ namespace _20160513_autenticacao.Controllers
 
         // POST: Consultas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more Detalhes see http://go.microsoft.com/fwlink/?LinkId=317598.
         //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -91,7 +91,7 @@ namespace _20160513_autenticacao.Controllers
 
         // POST: Consultas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more Detalhes see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ConsultaID,DataConsulta,VeterinarioFK,AnimalFK")] Consultas consultas)
