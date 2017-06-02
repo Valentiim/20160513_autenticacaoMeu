@@ -22,6 +22,12 @@ namespace ClinicaVeterinaria.Models
         [Required]
         public string NIF { get; set; }
 
+        //*****************************************************************
+        // criarum atributo para ligar este atributo à BD de autenticação
+        //*****************************************************************
+        public string Username { get; set; } //corresponde ao LOGIN
+
+
         // especificar que um DONO tem muitos ANIMAIS
         public ICollection<Animais> ListaDeAnimais { get; set; }
     }

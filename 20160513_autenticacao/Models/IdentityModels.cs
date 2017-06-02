@@ -15,6 +15,8 @@ namespace ClinicaVeterinaria.Models
         public string Apelido { get; set; }
         [Display(Name = "NIF")]
         public string NIF { get; set; }
+        public string Nome { get; internal set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
